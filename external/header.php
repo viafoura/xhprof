@@ -5,7 +5,10 @@ if (PHP_SAPI == 'cli') {
   $_SERVER['REQUEST_URI'] = $_SERVER['SCRIPT_NAME'];
 }
 
-include(dirname(__FILE__) . '/../xhprof_lib/config.php');
+if (!defined('XHPROF_CONFIG')) {
+  define('XHPROF_CONFIG', dirname(dirname(__FILE__)) . '/xhprof_lib/config.php');
+}
+require_once XHPROF_CONFIG;
 
 function getExtensionName()
 {

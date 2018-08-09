@@ -2,7 +2,10 @@
 if (!defined('XHPROF_LIB_ROOT')) {
   define('XHPROF_LIB_ROOT', dirname(dirname(__FILE__)) . '/xhprof_lib');
 }
-require_once (XHPROF_LIB_ROOT . "/config.php");
+if (!defined('XHPROF_CONFIG')) {
+  define('XHPROF_CONFIG', XHPROF_LIB_ROOT . '/config.php');
+}
+require_once XHPROF_CONFIG;
 include_once XHPROF_LIB_ROOT . '/display/xhprof.php';
 include (XHPROF_LIB_ROOT . "/utils/common.php");
 
