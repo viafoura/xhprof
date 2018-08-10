@@ -109,7 +109,7 @@ foreach ($exceptionPostURLs as $url)
 unset($exceptionPostURLs);
 
 //Determine wether or not to profile this URL randomly
-if ($_xhprof['doprofile'] === false)
+if ($_xhprof['doprofile'] === false && $weight)
 {
     //Profile weighting, one in one hundred requests will be profiled without being specifically requested
     if (rand(1, $weight) == 1)
