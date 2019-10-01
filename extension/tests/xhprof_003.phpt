@@ -9,7 +9,7 @@ include_once dirname(__FILE__).'/common.php';
 class C {
   private static $_static_attr = "i am a class static";
   private $_attr;
-  function __construct($attr) {
+  public function __construct($attr) {
     echo "In constructor...\n";
     $this->_attr = $attr;
   }
@@ -26,7 +26,7 @@ class C {
     return $this->_attr;
   }
 
-  function __destruct() {
+  public function __destruct() {
     echo "Destroying class {$this->_attr}\n";
   }
 }
